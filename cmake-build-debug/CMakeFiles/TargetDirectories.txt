@@ -1,0 +1,3 @@
+/Users/mac0s/Documents/LearnCWithHung/cmake-build-debug/CMakeFiles/LearnCWithHung.dir
+/Users/mac0s/Documents/LearnCWithHung/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/mac0s/Documents/LearnCWithHung/cmake-build-debug/CMakeFiles/rebuild_cache.dir
