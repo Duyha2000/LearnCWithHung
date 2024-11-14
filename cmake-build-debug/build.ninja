@@ -55,12 +55,6 @@ build CMakeFiles/LearnCWithHung.dir/main.c.o: C_COMPILER__LearnCWithHung_unscann
   OBJECT_DIR = CMakeFiles/LearnCWithHung.dir
   OBJECT_FILE_DIR = CMakeFiles/LearnCWithHung.dir
 
-build CMakeFiles/LearnCWithHung.dir/Test.c.o: C_COMPILER__LearnCWithHung_unscanned_Debug /Users/mac0s/Documents/LearnCWithHung/Test.c || cmake_object_order_depends_target_LearnCWithHung
-  DEP_FILE = CMakeFiles/LearnCWithHung.dir/Test.c.o.d
-  FLAGS = -g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics
-  OBJECT_DIR = CMakeFiles/LearnCWithHung.dir
-  OBJECT_FILE_DIR = CMakeFiles/LearnCWithHung.dir
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target LearnCWithHung
@@ -69,7 +63,7 @@ build CMakeFiles/LearnCWithHung.dir/Test.c.o: C_COMPILER__LearnCWithHung_unscann
 #############################################
 # Link the executable LearnCWithHung
 
-build LearnCWithHung: C_EXECUTABLE_LINKER__LearnCWithHung_Debug CMakeFiles/LearnCWithHung.dir/main.c.o CMakeFiles/LearnCWithHung.dir/Test.c.o
+build LearnCWithHung: C_EXECUTABLE_LINKER__LearnCWithHung_Debug CMakeFiles/LearnCWithHung.dir/main.c.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/LearnCWithHung.dir
   POST_BUILD = :

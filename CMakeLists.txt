@@ -3,5 +3,4 @@ project(LearnCWithHung C)
 
 set(CMAKE_C_STANDARD 99)
 
-add_executable(LearnCWithHung main.c
-        Test.c)
+add_executable(LearnCWithHung main.c)
