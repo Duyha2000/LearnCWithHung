@@ -18,7 +18,10 @@ Example: If a = 1 and b = 50, the program should display: 15 30 45.
 ## Exercise 4:
 
 Input an integer, calculate the sum of its digits, and print its reverse.
-Example: 3243 -> Sum = 3 + 2 + 4 + 3 -> Reverse: 3423.
+Example: 8243
+-> Sum = 3 + 2 + 4 + 8
+-> Reverse: 3428.
+hint: while, /10, %10
 
 ## Exercise 5:
 
@@ -61,3 +64,7 @@ Example: If n = 12, the program should display 6 (because 12 has divisors 1, 2, 
 Input two positive integers, a and b. Then, display the result of a^b.
 Example: If a = 2 and b = 3, the program should display: 8 (because 2 * 2 * 2 = 8).
 
+## Exercise 9:
+
+In ra số nhỏ nhất > 0 chia hết cho 3,5,7
+Output: 105
