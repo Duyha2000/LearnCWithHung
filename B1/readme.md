@@ -10,7 +10,7 @@ If it is odd, print "Odd number".
 
 Input: n = 10
 Output: "Even number"
-[main.c](../main.c)
+[main.c](../B2/B2.c)
 Input: n = 151
 Output: "Odd number"
 Use either a regular if/else statement or the ternary operator condition ? true : false.
