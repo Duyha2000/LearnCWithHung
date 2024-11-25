@@ -1,0 +1,37 @@
+//   Array:
+// C C++ Java:
+// Khai báo array:
+// data_type array_name[size];
+//    int arr[5]; // array 1 chiều
+    int numbers[] = {1, 2, 3, 4, 5};
+//    double number2[10][20]; // 10 dòng và 20 cột
+//    // index: start 0 -> end: size - 1
+////    size array
+//    int size = sizeof(arr) / sizeof(arr[0]);
+//    printf("%d", size);
+//    làm thế nào gán các số vào array này:
+//    int a, b, c, d, e;
+//    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
+//    arr[0] = a;
+//    arr[1] = b;
+//    arr[2] = c;
+//    arr[3] = d;
+//    arr[4] = e;
+    // Khởi tạo 1 biến -> nhập -> gán giá trị
+//    Input:
+    for (int i = 0; i < 5; i++) {
+        int number;
+        scanf("%d", &number);
+        // 26 27: nhập 1 biến -> gán giá trị vào cho nó
+        numbers[i] = number;
+    }
+    // arr[0] = 4
+
+//    For - i : in ra giá trị
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", numbers[i]);
+    }
+// arr[6]
+
+// Python Javascript

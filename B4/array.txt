@@ -1,0 +1,203 @@
+Exercise 1: Calculate the sum of array elements
+Requirement: Ask the user to input an array of integers, then calculate and display the sum of all elements in the array.
+Example Input: 1 2 3 4 5
+Example Output: sum = 15
+
+int arr[5];
+    int sum = 0;
+
+    // Input:
+    for (int i = 0; i < 5; i++) {
+        int num;
+        printf("nhap so ");
+        scanf("%d", &num);
+        arr[i] = num;
+    }
+    // Tính tổng các giá trị trong vòng lặp for
+    // sum = arr[0] + arr[1] + arr[2]
+
+    // i -> từ 0 đến 5
+    // arr[0] arr[1] arr[2] arr[3]
+    for (int i = 0; i < 5; i++) {
+
+        printf("%d", arr[i]);
+    }
+
+    for (int i = 0; i < 5; i++) {
+        sum += arr[i];
+    }
+
+
+    printf("%d", sum);
+
+// Nhập các số trong array và in ra và đếm các số chẵn > 0
+// Input: -2 6 8 -4 9
+// Output: 6 8 ( 2)
+    int arr[5];
+    int count = 0;
+    for (int i = 0; i < 5; i++) {
+        int num;
+        scanf("%d", &num);
+        arr[i] = num;
+    }
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] > 0 && arr[i] % 2 == 0) {
+            printf("%d", arr[i]);
+            count++;
+        }
+    }
+    printf("%d", count);
+
+
+Exercise 2a: Find the largest and smallest elements in an array
+Requirement: Ask the user to input an array of integers, then find and display the largest and smallest numbers.
+Example Input: 3 4 5 4 5
+Example Output: Largest: 5, Smallest: 3
+
+- Step 1: Initialize two variables:
+largest to hold the largest number (initially set to a very small value, such as the first element of the array).
+smallest to hold the smallest number (initially set to a very large value, such as the first element of the array).
+
+- Step 2: Use a loop to iterate through the array:
+Compare each number with largest. If the current number is greater, update largest.
+Compare each number with smallest. If the current number is smaller, update smallest.
+
+- Step 3: After the loop ends, the values of largest and smallest will be the largest and smallest elements of the array.
+
+- Step 4: Display the results to the user:
+Output: "Largest: [value], Smallest: [value]".
+
+ int max = arr[0];
+    int min = arr[0];
+    //Max: [3] -> 9 8 1 4
+    // Max: 0
+    // Arr ->  0 -> [-4 -2 -9 -6]
+
+    for (int i = 0; i < 5; i++) {
+        if (arr[i] > max) max = arr[i];
+        else if (arr[i] < min) min = arr[i];
+    }
+    printf("max = %d min = %d", max, min);
+
+
+Exercise 2b: Sort the array in ascending order
+Requirement: Ask the user to input an array of integers, then sort and display the array in ascending order.
+Example Input: [2, 9, 6, 6, 7, 8]
+Example Output: [2, 6, 6, 7, 8, 9]
+
+ int arr[5];
+
+    for (int i = 0; i < 5; i++) {
+        int num;
+        scanf("%d", &num);
+        arr[i] = num;
+    }
+//    Gawps 2 soos trong array: dùng 2 vonfg for
+    for (int i = 0; i < 5; i++) {
+        for (int j = i + 1; j < 5; j++) {
+            if (arr[i] < arr[j]) {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d", arr[i]);
+    }
+
+
+Exercise 3: Print the array in reverse order
+Requirement: Ask the user to input an array of integers, then print the array elements in reverse order (from last to first).
+Example Input: 2 9 8 7 9
+Example Output: 9 7 8 9 2
+
+ int arr[5];
+    for (int i = 0; i < 5; i++) {
+        int num;
+        scanf("%d", &num);
+        arr[i] = num;
+    }
+
+    for (int i = 4; i >= 0; i--) {
+        printf("%d", arr[i]);
+    }
+
+
+Exercise 4: Find the second largest element in an array
+Requirement: Ask the user to input an array of integers, then find and display the second largest number.
+Example Input: 3 4 5 4 5
+Example Output: 4
+
+Exercise 5: Count the occurrences of a value in an array
+Requirement: Ask the user to input an array of integers and a value. Find and display the number of times the value appears in the array.
+Example Input: Array: 3 4 5 3, Value: 3
+Example Output: 2
+
+int arr[5];
+    int a;
+    int count = 0;
+    for (int i = 0; i < 5; i++) {
+        int num;
+        scanf("%d", &num);
+        arr[i] = num;
+    }
+    printf("nhap so a:");
+    scanf("%d", &a);
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d", arr[i]);
+        if (arr[i] == a) {
+            count++;
+        }
+
+    }
+    printf("%d", count);
+
+// Nhập 1 số a và kiểm tra phần tử nào đầu tiên trong array bằng phần tử a. Nếu tìm tấy in ra vị trí, không tìm thấy in ra -1
+// Input: Array: 3 9 8 9 2
+// X: 9
+// Output: 1
+
+// X: 6
+// Output: -1
+
+
+
+
+int arr[5];
+int x;
+
+for (int i = 0; i < 5; i++) {
+int num;
+scanf("%d", &num);
+arr[i] = num;
+}
+printf("nhap x: ");
+scanf("%d", &x);
+int pos = -1; // số âm
+// Ouput: in ra vị tr phần tử (in ra 1) -> ko in trong vòng for
+// -> 3 9 8 9 2
+// x =  6
+for (int i = 0; i < 5; i++) {
+if (x == arr[i]) {
+pos = i; // 1
+}
+}
+printf("%d", pos);
+
+Exercise 10: Find two numbers in the array whose sum equals a target value
+Requirement: Ask the user to input an array of integers and a target value. Find and return two numbers from the array whose sum equals the target value.
+Example Input:
+
+Array: [2, 7, 11, 15]
+Target: 9
+Example Output: [2, 7]
+Explanation: 2 + 7 = 9
+Exercise 11: Check if the array is monotonic
+Requirement: Ask the user to input an array of integers. Determine whether the array is monotonic (entirely non-increasing or non-decreasing).
+Example Input: [3, 4, 5, 6, 7]
+Example Output: YES
+
