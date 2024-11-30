@@ -130,6 +130,44 @@ Exercise 4: Find the second largest element in an array
 Requirement: Ask the user to input an array of integers, then find and display the second largest number.
 Example Input: 3 4 5 4 5
 Example Output: 4
+//    Sắp xếp array giảm dần: IO File
+    FILE *f1;
+    FILE *f2;
+    f1 = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/input.txt", "r");
+    f2 = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/output.txt", "w");
+    int n;
+    fscanf(f1, "%d", &n);
+    int arr[n];
+
+
+    for (int i = 0; i < n; i++) {
+        fscanf(f1, "%d", &arr[i]);
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] < arr[j]) {
+                int temp;
+                temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+    int max = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < max) {
+            fprintf(f2, "%d", arr[i]);
+            break;
+        }
+    }
+
+    fclose(f1);
+    fclose(f2);
+    //  3 4 5 4 5
+    // Sort desc: -> 5 5 4 4 3 break;
+
 
 Exercise 5: Count the occurrences of a value in an array
 Requirement: Ask the user to input an array of integers and a value. Find and display the number of times the value appears in the array.
@@ -196,6 +234,39 @@ Array: [2, 7, 11, 15]
 Target: 9
 Example Output: [2, 7]
 Explanation: 2 + 7 = 9
+ FILE *f1, *f2;
+    f1 = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/input.txt", "r");
+    f2 = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/output.txt", "w");
+    int n; // khởi tạo giá trị trong vùng nhớ
+    // - - - - (n) - - - - -
+    fscanf(f1, "%d", &n);
+
+    int arr[n];
+
+    for (int i = 0; i < n; i++) {
+        fscanf(f1, "%d", &arr[i]);
+    }
+
+    int tar;
+
+    fscanf(f1, "%d", &tar);
+    // '3' 5 2 9
+    // target 7
+
+    // 2 vong for long nhau
+    // 5 2
+    int a, b;
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] + arr[j] == tar) {
+                a = arr[i];
+                b = arr[j];
+                break;
+            }
+        }
+    }
+    fprintf(f2, "%d %d", a, b);
+
 Exercise 11: Check if the array is monotonic
 Requirement: Ask the user to input an array of integers. Determine whether the array is monotonic (entirely non-increasing or non-decreasing).
 Example Input: [3, 4, 5, 6, 7]

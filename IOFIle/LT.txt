@@ -1,0 +1,40 @@
+//  Đọc nội dung, file nhị phân (0110)
+//    FILE *f;
+//    f = fopen("ten_file", "mode")
+// /Users/mac0s/Documents/LearnCWithHung/IOFIle/input.txt
+// mode: r -> null
+// w: thì sẽ tao 1 file mới nếu file chưa tồn tại
+// a: append:
+//    char ch;
+//    ch = 'c';
+//    char s[100] = "Tek4.vn";
+//    f = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/output.txt", "w");
+//
+//    fprintf(f, "%d %.2lf %.c %s\n", 100, 3.14, '@', s);
+//    fclose(f);
+//    Ví dụ 2 : Ghi vào file output.txt các số chẵn từ 1 tới 10
+// V dụ 3: cho array n phâần tử, tính tổng các  trong array
+// Input: n = 5
+// 2 4 6 8 10
+// Output: 30
+//    FILE *f1, *f2;
+//    f1 = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/input.txt", "r");
+//    f2 = fopen("/Users/mac0s/Documents/LearnCWithHung/IOFIle/output.txt", "w");
+//    if (f1 == NULL || f2 == NULL) printf("invalid");
+//    int n;
+//    fscanf(f1, "%d", &n);
+//    int arr[n];
+//    for (int i = 0; i < n; i++) {
+////        int a;
+////        scanf("%d", &a);
+////        arr[i] = a;
+//        fscanf(f1, "%d", &arr[i]);
+//    }
+//    fclose(f1);
+//    int sum = 0;
+//    for (int i = 0; i < n; i++) {
+//        sum += arr[i];
+//
+//    }
+//    fprintf(f2, "%d", sum);
+//    fclose(f2);
