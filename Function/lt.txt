@@ -1,0 +1,217 @@
+void printNumber(int n) {
+  for (int i = 1; i <= n; i++) {
+    printf("%d", i);
+  }
+}
+
+// void, int , double, float, bool
+
+// Cú pháp function:
+// kiểu trả về + tên function (...para){
+
+// code function }
+
+// 1. void: không có giá trị:
+// in ra giá trị, gán lại giá trị
+
+// 2. Tất cả các loại hàm: int , double, float (return ): liên quan tính toán
+// 1 function tính tổng 2 số a , b (int)
+int sum(int a, int b) { return a + b; }
+
+// Tính tổng các số từ 1 -> 5:
+int sumNumber() {
+  int sum = 0;
+  for (int i = 1; i <= 5; i++) {
+    sum += i;
+  }
+  return sum;
+}
+
+--
+// Input các giá trị, hiển thị ra ngoài màn hình
+// Trong main không ưu tiên viết code xử lý logic
+// Function: method
+// for (int i = 1; i <= 5; i++) {
+//   printf("%d", i);
+// }
+
+// for (int i = 1; i <= 7; i++) {
+//   printf("%d", i);
+// }
+
+// for (int i = 1; i <= 9; i++) {
+//   printf("%d", i);
+// }
+// Gọi hàm:
+printf("%d", sumNumber());
+
+
+---
+// Viết 1 function "in" ra các số chẵn từ 1 - 20:
+void evenNum() {
+  for (int i = 1; i <= 20; i++) {
+    if (i % 2 == 0) {
+      printf("%d \t", i);
+    }
+  }
+}
+// tham so
+void oddNum(int a) {
+  for (int i = 1; i <= a; i++) {
+    if (i % 2 != 0) {
+      printf("%d \t", i);
+    }
+  }
+}
+
+printf("nhap n:");
+int n;
+scanf("%d", &n);
+// arguments : đối số
+oddNum(n);
+
+---
+// camelCase: chữ cái đầu viest thường, chữ cái thứ 2 trở đi viết hoa
+// isFirstName is_first_name
+int cube(int n) { return n * n * n; }
+
+// Viết 1 function "nhập vào 1 số" và  "in" ra các số lẻ từ 1 đến n:
+// Input, gọi function viết trong main:
+int a;
+printf("nhap a: ");
+scanf("%d", &a);
+printf("%d", cube(a));
+
+---
+int fact(int a) {
+  int pro = 1;
+
+  for (int i = a; i >= 1; i--) {
+    pro *= i;
+  }
+  return pro;
+}
+// Void: in giá trị, gán giá trị
+// Int, double, float: tính toán giá trị (tổng, tích)
+// boolean: đúng sai:
+// Function kiểm tra số chẵn:
+bool isEven(int n) {
+  if (n % 2 == 0)
+    return true;
+  else
+    return false;
+}
+
+bool is357(int a) {
+  if (a % 5 == 0 && a % 7 == 0 && a % 9 == 0)
+    return true;
+  return false;
+}
+// Kiểm tra 1 số có chia hết cho 3,5 và 7 hay không, nếu có in ra true, không in
+// false:
+
+int n;
+scanf("%d", &n);
+if (isEven(n) == true)
+  printf("So chan");
+else
+  printf("So le");
+
+int b;
+scanf("%d", &b);
+if (is357(b))
+  printf("true");
+else
+  printf("false");
+
+--
+bool is357(int n) {
+  if (n % 5 == 0 && n % 7 == 0 && n % 3 == 0)
+    return true;
+  else
+    return false;
+}
+
+bool is5(int n) {
+  if (n % 5 == 0)
+    return true;
+  else
+    return false;
+  //" Hiển thị 10 số đầu" tiên chia hết cho 5 (>0): (đếm được 10 số để hiển thị
+  // ra)
+}
+
+// Output: 105 (đây là số nhỏ nhất chia hết 3,5 và 7)
+
+// int number = 1;
+// // đi từ số 1 -> số đầu tiên thỏa mãn điều kiện:
+// while (true) {
+//   if (is357(number)) {
+//     printf("%d", number);
+//     break;
+//   }
+//   // step:
+//   number++;
+// }
+// 1 -> ... (10 số chia hết cho 5)
+// for: start -> end ( 1 - 5)
+int count = 0;
+int number = 1;
+// while
+while (count < 10) {
+  if (is5(number)) {
+    printf("%d \t", number);
+    count++;
+  }
+  number++; // step:
+}
+
+--
+Bài 9:
+// bool isPrime(int n) {
+//   if (n < 2)
+//     return false;
+//   for (int i = 2; i <= n - 1; i++) {
+//     if (n % i == 0)
+//       return false;
+//   }
+//   return true;
+// }
+int count = 0;
+int number = 2;
+while (count < 20) {
+  if (isPrime(number)) {
+    printf("%d \t", number);
+    count++;
+  }
+  number++;
+}
+
+Bài 9.2:
+// Viết 1 function để kiểm tra số nguyên tố (có phải nguyên tố hay không:)
+
+bool isPrime(int n) {
+  if (n < 2)
+    return false;
+  for (int i = 2; i <= n - 1; i++) {
+    if (n % i == 0)
+      return false;
+  }
+  return true;
+}
+
+// Số nguyên tố: chia hết cho 1 và chính nó, không chia hết cho số nào nằm
+// trong đoạn từ 2 đến n-1
+// 8: 2 - 7 -> nếu số 8 chỉ cần chia hết 1 số trong này, không phải nguyên tố
+// 13: 2 - 12
+int sum = 0;
+int count = 0;
+int number = 1;
+while (count < 10) {
+  if (isPrime(number)) {
+    sum += number;
+    count++;
+  }
+  number++;
+}
+printf("sumPrime = %d", sum);
