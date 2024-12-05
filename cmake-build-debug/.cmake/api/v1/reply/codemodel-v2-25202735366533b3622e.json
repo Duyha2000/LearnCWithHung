@@ -6,10 +6,10 @@
 			[
 				{
 					"build" : ".",
-					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.29"
+						"string" : "3.28.1"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "LearnCWithHung::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-LearnCWithHung-Debug-2084da480a84ad8d887d.json",
+					"jsonFile" : "target-LearnCWithHung-Debug-258b636a997ff24149e0.json",
 					"name" : "LearnCWithHung",
 					"projectIndex" : 0
 				}
@@ -49,12 +49,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/Users/mac0s/Documents/LearnCWithHung/cmake-build-debug",
-		"source" : "/Users/mac0s/Documents/LearnCWithHung"
+		"build" : "C:/Users/Duy/LearnCWithHung/cmake-build-debug",
+		"source" : "C:/Users/Duy/LearnCWithHung"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 7
+		"minor" : 6
 	}
 }

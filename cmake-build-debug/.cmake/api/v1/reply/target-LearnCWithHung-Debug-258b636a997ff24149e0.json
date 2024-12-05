@@ -2,7 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "LearnCWithHung"
+			"path" : "LearnCWithHung.exe"
+		},
+		{
+			"path" : "LearnCWithHung.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -35,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu99 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics"
+					"fragment" : "-g -std=gnu99 -fdiagnostics-color=always"
 				}
 			],
 			"language" : "C",
@@ -49,7 +52,8 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -65,12 +69,16 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
+				"role" : "libraries"
 			}
 		],
 		"language" : "C"
 	},
 	"name" : "LearnCWithHung",
-	"nameOnDisk" : "LearnCWithHung",
+	"nameOnDisk" : "LearnCWithHung.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -82,7 +90,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -92,6 +101,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "B2/B2.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "IOFIle/main.c",
 			"sourceGroupIndex" : 0
 		}
 	],
