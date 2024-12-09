@@ -1,6 +1,46 @@
-#include <stdio.h>
+// String:
+//    char ch = 'a', 'b',...;
+//    char ch;
+//    scanf("%c", &ch);
+//    printf("%c", ch);
+// char:
+//    char str[5]; // 4 ký tự - - - - \0
+//    scanf("%4s", str);
+//    printf("%s", str);
+//    char c[] = "Hello World!";
+//    char c[] = {'H', 'e', 'l', '\0'};
+//    char str[20]; // 4 ký tự - - - - \0
+////    scanf("%19s", str); // lây đc chữ đầu tiên -> space là ngắt không lấy nữa
+//    fgets(str, 20, stdin); // standard - input
+//    // strcat(str1,str2) -> nối chuỗi vaào chuỗi ban đầu -> concat(nối)
+//    char str1[20];
+//    fgets(str1, 20, stdin); // standard - input
 
-int main(void) {
-    printf("Xin chào");
-    return 0;
-}
+//    strcat(str, str1);
+//    // strcmp (str1,str2) -> compare 2 string:
+//    char str[] = "Baa";
+//    char str1[] = "Banana";
+//    //printf
+//    int result = strcmp(str, str1);
+//    if (result > 0) {
+//        printf("Chuỗi 1 > Chuỗi 2");
+//    } else if (result < 0) {
+//        printf("Chuỗi 1 < Chuỗi 2");
+//    } else printf("2 chuỗi bằng nhau");
+//    printf("%d", result);
+
+    // < 0 -> Neu string1 < string2
+    //  0 -> Neu string1 = string2
+    // > 0 -> Neu string1 > string2
+
+    // strcpy(str1,str2): copy chuỗi 2 vào chuỗi 1
+//    char str2[] = "ngo";
+//    char str3[5];
+//    strcpy (str3, str2);
+//    printf("%s", str3);
+
+// length string: strlen(str)
+    char str2[] = "Hello world!";
+    size_t length = strlen(str2);
+    printf("%zu", length);
+//  Truy cập index: 0 -> length - 1
