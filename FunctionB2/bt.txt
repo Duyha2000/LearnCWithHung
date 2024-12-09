@@ -1,0 +1,247 @@
+Exercise 0: (This was added for clarity)
+void largerThanN(int arr[], int size, int n) {
+  for (int i = 0; i < size; i++) {
+    if (arr[i] > n) {
+      printf("%d \t", arr[i]);
+    }
+  }
+}
+// int accum(int *x) {
+//   *x += 5;
+//   return *x;
+// }
+// Vào địa chỉ bằng con trỏ
+// Viết 1 function để sau khi gọi nó sẽ in ra giá trị x = 10
+int size;
+int n;
+printf("nhap size: ");
+scanf("%d", &size);
+int numbers[size];
+for (int i = 0; i < size; i++) {
+  int num;
+  scanf("%d", &num);
+  numbers[i] = num;
+}
+printf("nhap n: ");
+scanf("%d", &n);
+largerThanN(numbers, size, n);
+// int x = 5;
+// accum(&x);
+// printf("%d", x);
+
+Exercise 1: Calculate the sum of the elements in the array
+Requirement: Write a function to calculate the sum of all elements in an array of integers.
+Input: 1 2 3 4 5
+Output: sum = 15
+
+
+int sum_arr(int arr[], int size) {
+  int sum = 0;
+
+  for (int i = 0; i < size; i++) {
+    sum += arr[i];
+  }
+  return sum;
+}
+
+int n;
+printf("nhap size: ");
+scanf("%d", &n);
+int arr[n];
+for (int i = 0; i < n; i++) {
+  int a;
+  scanf("%d", &a);
+  arr[i] = a;
+}
+printf("%d", sum_arr(arr, n));
+
+Exercise 2a: Find the largest and smallest elements in the array
+Requirement: Write a function to find the largest and smallest elements in an array of integers.
+Input: 3 4 5 4 5
+Output: 5 - 3
+
+int largestNum(int arr[], int n) {
+  int max = arr[0];
+  for (int i = 1; i < n; i++) {
+    if (max < arr[i]) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+int smallestNum(int arr[], int n) {
+  int min = arr[0];
+  for (int i = 1; i < n; i++) {
+    if (min > arr[i]) {
+      min = arr[i];
+    }
+  }
+  return min;
+}
+
+int size;
+printf("nhap size: ");
+scanf("%d", &size);
+int arr[size];
+for (int i = 0; i < size; i++) {
+  int n;
+  scanf("%d", &n);
+  arr[i] = n;
+}
+
+printf("largest  = %d smallest = %d", largestNum(arr, size),
+       smallestNum(arr, size));
+
+Exercise 2b: Sort the array in ascending order
+Requirement: Write a function to sort an array of integers in ascending order.
+Input: [2, 9, 6, 6, 7, 8]
+Output: [2, 6, 6, 7, 8, 9]
+
+Exercise 3: Print the array in reverse order
+Requirement: Write a function to print an array in reverse order (from last to first).
+Input: 2 9 8 7 9
+Output: 9 7 8 9 2
+
+void reverseArr(int arr[], int size) {
+  for (int i = size - 1; i >= 0; i--) {
+    printf("%d", arr[i]);
+  }
+}
+
+//   2 4 7 3 0
+//   0 1 2 3 4
+
+//   0 3 7 4 2
+//-> 4 3 2 1 0
+
+int size;
+printf("nhap size: ");
+scanf("%d", &size);
+int arr[size];
+for (int i = 0; i < size; i++) {
+  int n;
+  scanf("%d", &n);
+  arr[i] = n;
+}
+reverseArr(arr, size);
+
+Exercise 4: Find the second largest element in the array
+Requirement: Write a function to find the second largest element in an array of integers.
+Input: 3 4 5 4 5
+Output: 4
+
+int size;
+printf("nhap size");
+scanf("%d", &size);
+int arr[size];
+for (int i = 0; i < size; i++) {
+  int a;
+  scanf("%d", &a); // return arr[i];
+  arr[i] = a;
+}
+
+printf("%d", secondNum(arr, size));
+desArr(arr, size);
+for (int i =0; i< size; i++){
+  printf ("%d", arr [i]);
+}
+
+void desArr(int arr[], int size) {
+  int temp;
+  for (int i = 0; i < size; i++) {
+    for (int j = i + 1; j < size; j++) {
+      if (arr[i] < arr[j]) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+    }
+  }
+}
+
+// arr: 3 4 5 6 7
+int secondNum(int arr[], int size) {
+  desArr(arr, size);
+  int second;
+  for (int i = 0; i < size; i++) {
+    if (arr[i] < arr[0]) {
+      second = arr[i];
+      break;
+    }
+  }
+  return second;
+}
+
+Exercise 5: Find the number of occurrences of a value in the array
+Requirement: Write a function to find the number of times a specified value appears in an array of integers.
+Input: arr = 3 4 5 3, X = 3
+Output: 2
+int occuArr(int arr[], int size, int n) {
+  int count = 0;
+
+  for (int i = 0; i < size; i++) {
+    if (arr[i] == n) {
+      count++;
+    }
+  }
+  return count;
+}
+int size;
+printf("nhap size: ");
+scanf("%d", &size);
+int arr[size];
+for (int i = 0; i < size; i++) {
+  int a;
+  scanf("%d", &a);
+  arr[i] = a;
+}
+int n;
+printf("nhap n: ");
+scanf("%d", &n);
+
+printf("%d", occuArr(arr, size, n));
+
+Exercise 6: Insert an element into the array
+Requirement: Write a function to insert a value at a specified position in an array. If the position is invalid, return an error.
+Input: arr = [3, 5, 6, 7], position = 2, number = 5
+Output: [3, 5, 5, 6, 7]
+
+Exercise 7: Merge two integer arrays
+Requirement: Write a function to merge two arrays of integers into one.
+Example:
+arr[1] = [3, 4, 5, 6], arr[2] = [4, 5, 6]
+Output: [3, 4, 5, 6, 4, 5, 6]
+
+Exercise 8: Delete an element from the array by index or value
+Requirement: Write a function to delete an element at a specified index or delete all occurrences of a specified number in the array.
+Example 1:
+Input: [4, 6, 7, 8], indexDel = 2
+Output: [4, 6, 8]
+Example 2:
+Input: [5, 6, 7, 6, 6], numberDel = 6
+Output: [5, 7]
+
+Exercise 9: Sort the array in ascending order
+Requirement: Write a function to sort an array of integers in ascending order.
+Input: [2, 9, 6, 6, 7, 8]
+Output: [2, 6, 6, 7, 8, 9]
+
+Exercise 10: Find two numbers in an array whose sum equals a target
+Requirement: Write a function that takes an array and a target integer, and finds two elements whose sum equals the target.
+Example 1:
+Input: nums = [2, 7, 11, 15], target = 9
+Output: [2, 7]
+Explanation: Because nums[0] + nums[1] == 9, we return [2, 7].
+Example 2:
+Input: nums = [3, 2, 4], target = 6
+Output: [2, 4]
+Example 3:
+Input: nums = [3, 3], target = 6
+Output: [3, 3]
+
+
+Exercise 11: Count the prime numbers in an array
+Requirement: Write a function that counts how many prime numbers are in an array.
+Input: n = 5 -> [3, 4, 5, 6, 7]
+Output: 3 (3, 5, 7 are prime numbers)

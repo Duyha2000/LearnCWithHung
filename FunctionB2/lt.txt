@@ -1,0 +1,59 @@
+/*
+Bài 1: Cho 2 số a,b -> Viết 1 function hoán đổi vị trí 2 số này
+Ví dụ: a = 3 b = 4
+swap -> b = 4 a = 3
+Bài 2: Cho 1 array, viết 1 function để sắp xếp array tăng dần:
+ */
+// Function: xử lý logic: input, output
+// Mình cần so sánh 2 số, so sánh 2 vị trí (2 vòng for)
+void sort_array(int arr[], int n) {
+  int temp;
+  for (int i = 0; i < n; i++) {
+    for (int j = i + 1; j < n; j++)
+      if (arr[i] > arr[j]) {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+      }
+  }
+}
+
+
+// Sử dụng tham chiếu: pass by reference:
+// void swap_num(int a, int b) {
+//   int temp;
+//   temp = a;
+//   a = b;
+//   b = temp;
+// }
+int sum(int a, int b) { return a + b; }
+
+// Tham trị: pass by value:
+// void swap_num(int *a, int *b) {
+//   int temp;
+//   temp = *a;
+//   *a = *b;
+//   *b = temp;
+// }
+
+int n;
+printf("nhap n: ");
+scanf("%d", &n);
+int arr[n];
+for (int i = 0; i < n; i++) {
+  int num;
+  scanf("%d", &num);
+  arr[i] = num;
+}
+
+sort_array(arr, n);
+for (int i = 0; i < n; i++) {
+  printf("%d", arr[i]);
+}
+
+// int a, b;
+// scanf("%d %d", &a, &b);
+// printf("Before swap: %d %d \n", a, b); // 2 3
+// swap_num(&a, & b);
+// printf("%d", sum(a, b));
+// printf("After swap: a = %d, b = %d", a, b);

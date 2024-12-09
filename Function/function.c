@@ -28,7 +28,7 @@ bool isPrime(int n) {
   return true;
 }
 
-int main(void) {
+int function(void) {
   // https://github.com/Duyha2000/Cplusplus/tree/main/Function
   // int a = 48: [1] 2 3 4 6 [12] 24
   // int b = 60: [1] 2 3 [4] [12] 30
