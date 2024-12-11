@@ -1,0 +1,70 @@
+Bài 2:
+ char ch;
+    int a, b;
+    char *pch = &ch;
+    int *pa = &a;
+    int *pb = &b;
+
+    printf("type a character: \n");
+    scanf("%c", &ch);
+
+    printf("type 2 intergers: \n");
+    scanf("%d %d", &a, &b);
+
+    printf("ch address = %p\n", &ch);
+    printf("pch address= %p\n", &pch);
+    printf("pch content = %p\n", pch);
+    printf("value pointed by pch = %c", *pch);
+
+    printf("address a & b = %p %p\n", &a, &b);
+    printf("address pa &pa = %p %p\n", &pa, &pb);
+    printf("content pa & pb = %p %p\n", pa, pb);
+    printf("value pointed by pa & pb = %d %d ", *pa, *pb);
+
+Bai 6:
+void swap(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+
+// Input:
+void read_array(int *v, int max) {
+    for (int i = 0; i < max; i++) {
+        scanf("%d", v + i);
+    }
+}
+
+void print_array(const int *v, int max) {
+    for (int i = 0; i < max; i++) {
+        printf("%d", *(v + i));
+    }
+}
+
+// a1: [3] 4 7
+//         ->
+// a2: [5] 2 9
+void swap_array(int *v1, int *v2, int max) {
+    for (int i = 0; i < max; i++) {
+        swap(v1 + i, v2 + i);
+    }
+}
+
+//  max = scanf
+
+    int max;
+    printf("number of value to read: ");
+    scanf("%d", &max);
+    int v1[max];
+    int v2[max];
+    printf("type the value for arr1: ");
+    read_array(v1, max);
+    printf("type the value for arr2: ");
+    read_array(v2, max);
+    swap_array(v1, v2, max);
+    print_array(v1, max);
+    print_array(v2, max);
+
+Bai 8:

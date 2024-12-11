@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
+int string(void) {
     char str[20];
     int choice;
 

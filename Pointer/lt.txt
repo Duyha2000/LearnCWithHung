@@ -1,0 +1,124 @@
+#include <stdio.h>
+
+void passByVal(int x) {
+    x += 1;
+    printf("%d", x);
+}
+
+void passByRef(int *x) {
+    *x += 1;
+}
+
+int main(void) {
+    //  pointer:
+    // Bộ nhớ máy tih:
+
+    // int x = 3 -> 4 byte , float 4 byte , double 8 byte, char 1 byte
+    // RAM: Random access memory:
+    // Ram 8GB:
+    //xxx1234 0x1234 0x1235 [- - - -] - - - - - - - - - - - - - - - -
+    // int x = 3 [0x1234 0x1235 ...] -> 0x1234
+//    int x;
+//    printf("%p \n", &x); // 0x16fc1b548 0x16fc1b549 0x16fc1b550 0x16fc1b551
+//    int y;
+//    printf("%p\n", &y); // 0x16fc1b552
+//    char c;
+//    printf("%p\n", &c);
+
+    // Biến variable:
+//    int N = 5; // giá trị, có 1 địa chỉ
+//    // Pointer:
+//    int *pointer; //4 byte - - - -
+//    double a; // 8 byte    - - - - - - - -
+//    printf("Giá trị của biến pointer: %d\n", *pointer);
+//    pointer = &a;
+//    printf("%p", pointer);
+    // Kiểu dữ liệu con trỏ: phụ thuộc vào kiểu dữ liệu mà biến trỏ đến
+
+    // GIả sử khởi tạo 1 biến int num = 10;
+//    int num = 10; // xx1234 xx1235 ...
+//    num = 12;  //
+//    printf("%d", num);
+    // ->
+//    int *ptr = &num;
+//    *ptr = 12;
+//    printf("Giá trị cu biến num %d", num);
+    // Tóan tử tăng giảm con trỏ:
+    // int x: xx1230
+    // int y: xx1234
+//    int b = 12345; // xx1230
+//    int c;
+//    int *p = &c;
+//    printf("Địa chỉ ban đầu của p là: %p\n", p);
+//    p++;
+//    printf("Địa chỉ sau khi thay đổi của p là:%p", p);
+
+    // reference - dereference:
+//    int N = 1000;
+//    int *ptr = &N; // khởi tạo 1 con trỏ:
+//
+//    // dereference:
+//    *ptr = 200;
+//    printf("Giá trị của bin sau khi con tror trỏ tới là: %d %d \n", N, *ptr);
+//
+    // Truyền tham chiếu (pass by refer...) vs truyen tham tri: pass by value:
+
+    // pass by value:
+//    int x = 5; // xx1234
+//    printf("Before:%d\n", x);
+//
+//    passByVal(x); // tạo ra 1 biến là bản clone của nó để lưu trữ giá trị (xx1238)
+//
+//    // pass by reference:
+//
+//    printf("After:%d\n", x);
+//
+//    passByRef(&x);
+//    printf("After:%d", x);
+
+    // Cpm trỏ với mảng 1 chiều:
+    // a[] = {3,8,4,2,9}
+    // địa chỉ array a: [- - - -] [- - - - ]
+    // int x - - - -
+    // a -> hằng con trỏ, và không thể thay đổi được:
+//    int n = 5;
+//    int a[5] = {3, 8, 4, 2, 9};
+//
+//    printf("%p\n", a); // 0x16fafb530
+//    // In ra địa chỉ của từng phâ tử trong array:
+//    for (int i = 0; i < n; i++) {
+//        printf("Địa chỉ của a[%d]: %p\n", i, a + i);
+//    }
+//    // In ra giá trị của từng phâ tử trong array:
+//    for (int i = 0; i < n; i++) {
+////        printf("%d", a[i]);
+//        printf("%d \n", *(a + i));
+//    }
+
+    int n = 5;
+    int a[5] = {3, 8, 4, 2, 9};
+    int *ptr = &a;
+    for (int i = 0; i < 5; i++) {
+        printf("%d", *(ptr + i));
+    }
+    printf("\n");
+    ptr += 3;
+    printf("%d", *ptr); // 2
+    return 0;
+}
+
+
+--
+Bai 5:
+void swap(int *a, int *b) {
+    int temp;
+    temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+ int a = 3, b = 4;
+    printf("Before: %d %d", a, b);
+
+    swap(&a, &b);
+    printf("After:  %d %d", a, b);
