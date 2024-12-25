@@ -1,0 +1,99 @@
+#include <stdio.h>
+
+// Struct: 1 object -> lưu trữ nhiều thông tin
+// struct Student: name , age
+struct Student {
+    char name[50];
+    int age;
+};
+// struct Class:
+struct Class {
+    char name[50];
+    struct Student student;
+
+};
+
+//struct Class class = {"9a", {"hung", 19}
+//};
+
+// Tham số cấu trúc trong hàm:
+void printAll(struct Class class) {
+    printf("%s %s %d", class.name, class.student.name, class.student.age);
+}
+
+// Khai báo biến struct:
+struct Student student1;
+struct Student student2;
+struct Student student3 = {"Harry Kane", 18};
+
+// Làm thế nào để in ra 18 tuổi từ dối tượng student3:
+// "." -> tên đối tượng.thuộc tính
+
+// Struct lồng nhau:
+
+// Mảng cấu trúc:
+struct Book {
+    int id;
+    char name[50];
+    int price;
+    char author[20];
+};
+
+struct Book books[2] = {
+        {1, "A", 10000, "Ngo Tat To"},
+        {2, "A", 10000, "Ngo Tat To"},
+};
+// books[1].id
+// books[1].price
+
+
+struct Library {
+    char name[50];
+    char address[100];
+    struct Book book;
+};
+
+void printLib(struct Library library) {
+    printf("%s\t %s\t %d\t %s\t %d\t %s", library.name, library.address, library.book.id, library.book.name,
+           library.book.price, library.book.author);
+}
+
+//struct Library = {
+//"Nguyen Trai", {
+//1, "Tat den", 20000}
+//};
+
+//struct Library l1 = {
+//        "Nguyen Trai", {1, "Tat den", 20000}
+//};
+
+
+
+
+
+int main(void) {
+    printf("%d \n", student3.age);
+    struct Class class = {"9a", "hung", 20};
+
+    struct Library library = {"ABC", "ngyen cu trinh", 001, "chi dau", 30000, "ngo tat"};
+
+
+    // student1: làm thế nào để nhập tên và tuổi cho nó:
+    /*
+    fgets(student1.name, 50, stdin);
+    printf("%s", student1.name);
+    scanf("%d", &student1.age);
+    printf("%d", student1.age);
+     */
+//    printf("%s", library.book.name);
+
+    printAll(class);
+    printf("\n");
+    printLib(library);
+
+    for (int i = 0; i < 2; i++) {
+        printf("%s\t%d\t %s", books[i].name, books[i].price, books[i].author);
+    }
+    
+    return 0;
+}

@@ -1,0 +1,71 @@
+Bài 1:
+Viết chương trình khởi tạo cấu trúc sinh viên có các thuộc tính name, age và phoneNumber.
+Khai báo biến từ cấu trúc và gán giá trị cho biến đó. In biến ra màn hình sau khi khai báo.
+
+struct Student {
+    char name[50];
+    int age;
+    char phone[10];
+
+};
+
+
+void printStu(struct Student student) {
+    printf("%s %d %s", student.name, student.age, student.phone);
+}
+
+Bài 2:
+Viết chương trình khởi tạo cấu trúc sinh viên có các thuộc tính name, age và phoneNumber.
+Khai báo mảng sinh viên có 5 phần tử và yêu cầu người dùng nhập thông tin của từng sinh viên.
+Sau khi nhập xong thì in thông tin các sinh viên trong mảng.
+struct Student students[2];
+    for (int i = 0; i < 2; i++) {
+        fgets(students[i].name, 50, stdin);
+//        scanf("%49s", &students[i].name);
+        scanf("%d", &students[i].age);
+//        scanf("%9s", &students[i].phone);
+        fgets(students[i].phone, 10, stdin);
+    }
+    for (int i = 0; i < 2; i++) {
+        printf("%s %d %s", students[i].name, students[i].age, students[i].phone);
+    }
+
+//    struct Student student = {"hung", 18, "0938224"};
+//    printStu(student);
+
+Bài 3:
+Viết chương trình khởi tạo cấu trúc sinh viên có các thuộc tính id, name, age và phoneNumber.
+Khai báo mảng sinh viên có độ dài là 50 và có sẵn 5 phần tử.
+Xây dựng tính năng sửa thông tin sinh viên.
+Cho người dùng nhập vào đại lượng id để tiến hành tìm kiếm sinh viên theo id.
+Nếu sinh viên tìm kiếm theo id không tồn tại trong mảng thì in thông báo không tìm thấy, nếu sinh viên tìm kiếm theo id tồn tại thì tiếp tục cho người dùng chỉnh sửa giá trị của 2 thuộc tính name và age (Không sửa id).
+
+In ra thông tin toàn bộ sinh viên có trong mảng sinh viên sau khi tiến hành chỉnh sửa.
+ // students[0].name
+    int id;
+    printf("nhap id");
+    scanf("%d", &id);
+    edit(id, students);
+
+    for (int i = 0; i < 5; i++) {
+        printf("%d %s %s", students[i].id, students[i].name, students[i].phone);
+    }
+    void edit(int id, struct Student students[]) {
+        for (int i = 0; i < 5; i++) {
+            if (id == students[i].id) {
+                scanf("%s", &students[i].name);
+                scanf("%s", &students[i].phone);
+            }
+        }
+    }
+---
+Bài tập 4:
+Viết chương trình khởi tạo cấu trúc sinh viên có các thuộc tính id, name, age và phoneNumber.
+Khai báo mảng sinh viên có độ dài 50 và có sẵn 5 phần tử.
+
+Xây dựng tính năng xoá sinh viên vào trong mảng sinh viên.
+Yêu cầu người dùng nhập vào tên (name) sinh viên cần phải xoá.
+Tiến hành tìm kiếm sinh viên theo tên. Nếu sinh viên đó không tồn tại, thông báo không tồn tại.
+Nếu sinh viên đó có tồn tại, tiền hành xoá sinh viên đó khỏi mảng.
+
+Hiển thị ra toàn bộ thông tin của sinh viên có trong mảng sau khi xoá một sinh viên.
