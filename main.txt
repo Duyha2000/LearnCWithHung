@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include "function.h"
+//    Khai báo mảng sách
+
+int main(void) {
+    int choice;
+    int size = 0;
+    // 1 array 50 số nguyên: int arr[50]
+    struct Book books[50]; // max = 50 cuốn sách
+    do {
+
+        // books:                   A B C D E
+        //      Nhập mã sách = D ->       3 -> A B C F E
+        //                      0 1 2 3 4
+        // F, pos = 2 ->        A B F C D E
+        //                      - -   ->
+        //      B1:            Gán C D E -> index 2 3 4 cho C D E -> index 3 4 5 (for, xác định start và end) -> gán giá trị
+        //      B2:            books[pos] = F
+        //      B3: Tăng size lên 1
+        //    A B C D E
+        // 5: 0 1 2 3 4
+        menu();
+        scanf("%d", &choice);
+        switch (choice) {
+            case 1: {
+                inputBooks(books, &size);
+                break;
+            }
+            case 2: {
+                showBooks(books, size);
+                break;
+            }
+            case 3: {
+                insertBooks(books, &size);
+                break;
+            }
+
+            case 4: {
+                deleteBooks(books, &size);
+                break;
+            }
+
+            case 5: {
+                updateBooks(books, size);
+                break;
+            }
+
+            case 6: {
+                arrangeBooks(books, size);
+                break;
+            }
+            case 7: {
+                searchBooks(books, size);
+                break;
+            }
+        }
+    } while (choice != 8);
+    return 0;
+}
